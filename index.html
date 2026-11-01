@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Hitarth Vaghela, MEng Aeronautical Engineering student at Loughborough University. Projects, results and skills.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hitarth Vaghela Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style id="st">
+/* Layout: a corporate one-page CV. Plain white sheet, navy accent, serif name and section titles, sans body, summary card beside the intro. */
+:root{
+  --paper:#FFFFFF; --sheet:#F6F8FA; --ink:#17212E; --ink-2:#5A6575; --line:#E1E5EA;
+  --accent:#1F3A5F; --accent-ink:#1F3A5F; --accent-soft:#EDF1F6; --blue:#2558A0; --blue-soft:#E8EFF8;
+  --ok:#1F6B47;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:4px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#11151B; --sheet:#181E26; --ink:#E5E9EF; --ink-2:#9BA6B4; --line:#29313C;
+  --accent:#9DB9DF; --accent-ink:#B3CAE8; --accent-soft:#1D2733; --blue:#8DB4E8; --blue-soft:#1C2836;
+  --ok:#6CC59A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11151B; --sheet:#181E26; --ink:#E5E9EF; --ink-2:#9BA6B4; --line:#29313C;
+  --accent:#9DB9DF; --accent-ink:#B3CAE8; --accent-soft:#1D2733; --blue:#8DB4E8; --blue-soft:#1C2836;
+  --ok:#6CC59A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16.5px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15;font-weight:600}
+h3{font-family:var(--f-body);font-weight:600}
+.mono{font-family:var(--f-body)}
+.label{font:600 12px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:16px;min-height:60px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 17px var(--f-display);min-width:0}
+.mark b{display:none}
+.mark span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav nav{margin-left:auto;display:flex;gap:2px;align-items:center}
+.nav nav a{text-decoration:none;font-size:15px;padding:6px 10px;color:var(--ink-2)}
+.nav nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:720px){.nav nav a{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f-body);padding:11px 18px;border-radius:var(--r);
+  border:1px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary,.btn.accent{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.btn.primary:hover,.btn.accent:hover{filter:brightness(1.12)}
+.btn.sm{padding:7px 12px;font-size:14px}
+.btn svg{width:15px;height:15px;flex:none}
+
+/* hero */
+.hero{padding-block:clamp(36px,6vw,64px) 8px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:start}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.status{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--f-body);color:var(--ok);max-width:100%}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+.hero h1{font-size:clamp(38px,5.6vw,58px);margin-top:14px;letter-spacing:-.01em}
+.hero .role{font:500 clamp(17px,2vw,20px)/1.4 var(--f-body);color:var(--ink-2);margin:8px 0 0}
+.hero .pitch{font-size:17px;max-width:62ch;margin:18px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.email-line{margin-top:12px;font:400 15px var(--f-body);color:var(--ink-2);overflow-wrap:anywhere}
+
+/* summary card */
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);border-top:3px solid var(--accent)}
+.sheet .fig,.foil-ed,.tb-foot{display:none}
+.tb{display:grid;grid-template-columns:minmax(0,1fr)}
+.tb > div{padding:12px 20px;border-bottom:1px solid var(--line);min-width:0;display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:4px 16px;align-items:baseline}
+.tb > div:last-child{border-bottom:0}
+.tb > div:empty{display:none}
+.tb > div > .ed{grid-column:1/-1}
+.tb .label{letter-spacing:.04em}
+.tb .v{font:500 15.5px/1.4 var(--f-body);overflow-wrap:anywhere}
+@media (max-width:420px){.tb > div{grid-template-columns:minmax(0,1fr)}}
+
+/* sections */
+section.block{padding-block:clamp(40px,6vw,60px) 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:24px}
+.sec-head h2{font-size:clamp(26px,3vw,32px);color:var(--accent)}
+.sec-head .label{text-transform:none;letter-spacing:0;font-weight:400;font-size:15px}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.chip{font:500 14px var(--f-body);padding:6px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);color:var(--ink-2);cursor:pointer}
+.chip:hover{color:var(--ink);border-color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.filter-note{font:400 15px var(--f-body);color:var(--ink-2);margin:-8px 0 18px}
+.filter-note button{background:none;border:0;color:var(--blue);font:inherit;cursor:pointer;text-decoration:underline;padding:0}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:820px){.projects{grid-template-columns:minmax(0,1fr)}}
+.proj{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.proj.featured{grid-column:1/-1}
+.proj .cover{aspect-ratio:16/7;max-width:100%;background:var(--sheet);border-bottom:1px solid var(--line);overflow:hidden}
+.proj .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.proj .body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+.proj .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.proj .meta .label{text-transform:none;letter-spacing:0;font-weight:400;font-size:14px}
+.disc{font:600 12px var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);padding:3px 8px;border-radius:2px}
+.proj h3{font-size:21px;line-height:1.25}
+.proj.featured h3{font-size:24px}
+.proj > .body > .label{text-transform:none;letter-spacing:0;font-size:14.5px;font-weight:500}
+.proj .sum{margin:0;max-width:75ch}
+.metrics{display:flex;flex-wrap:wrap;gap:12px 32px;padding:12px 0 2px;border-top:1px solid var(--line)}
+.metric{min-width:0}
+.metric .num{font:600 24px/1.1 var(--f-display);color:var(--accent);font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:4px;flex-wrap:wrap}
+.metric .num small{font:500 14px var(--f-body);color:var(--ink-2)}
+.metric .label{margin-top:4px;text-transform:none;letter-spacing:0;font-weight:400;font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:6px}
+.tool{font:400 13.5px var(--f-body);padding:2px 9px;background:var(--sheet);border:1px solid var(--line);border-radius:2px;color:var(--ink-2)}
+.proj details{border-top:1px solid var(--line);padding-top:12px}
+.proj summary{cursor:pointer;font:600 14.5px var(--f-body);color:var(--blue);list-style:none;display:flex;align-items:center;gap:6px}
+.proj summary::-webkit-details-marker{display:none}
+.proj summary::after{content:"Show";font-weight:400;color:var(--ink-2);margin-left:auto;font-size:13.5px}
+.proj details[open] summary::after{content:"Hide"}
+.pab{display:grid;gap:12px;margin-top:12px}
+.pab .label{color:var(--ink)}
+.pab p{margin:2px 0 0;max-width:75ch;color:var(--ink-2)}
+.links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:auto}
+.links:empty{display:none}
+.links a{font:600 14.5px var(--f-body);color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.links a:hover{text-decoration:underline}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:var(--r);color:var(--ink-2);text-align:center;grid-column:1/-1}
+
+/* experience */
+.xp-item{display:grid;grid-template-columns:170px minmax(0,1fr);gap:6px 28px;padding-block:18px;border-bottom:1px solid var(--line)}
+.xp-item:first-child{padding-top:2px}
+@media (max-width:640px){.xp-item{grid-template-columns:minmax(0,1fr)}}
+.xp-item .label{text-transform:none;letter-spacing:0;font-weight:400;font-size:15px}
+.xp-item h3{font-size:19px}
+.xp-item .org{color:var(--accent-ink);font-weight:600;margin-top:2px}
+.xp-item ul{margin:8px 0 0;padding-left:18px;max-width:75ch}
+.xp-item li{margin:4px 0}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px 40px}
+.sk-group{min-width:0;padding-bottom:12px}
+.sk-group h3{font-size:16px;color:var(--accent);margin-bottom:6px}
+.sk-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:6px 0;border-top:1px solid var(--line);font-size:15.5px}
+.sk-row .n{min-width:0;overflow-wrap:anywhere}
+.sk-row button.n{background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.sk-row button.n:hover{color:var(--blue);text-decoration-color:currentColor}
+.sk-row .used{font:400 13px var(--f-body);color:var(--ink-2);margin-left:8px}
+.lvl{display:flex;gap:3px;align-items:center}
+.lvl i{width:14px;height:5px;border-radius:1px;background:var(--line)}
+.lvl i.on{background:var(--accent)}
+.lvl-key{display:flex;gap:16px;flex-wrap:wrap;font:400 13.5px var(--f-body);color:var(--ink-2)}
+.lvl-key span{display:inline-flex;gap:6px;align-items:center}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.edu-card{border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;min-width:0}
+.edu-card > .label{text-transform:none;letter-spacing:0;font-weight:400;font-size:14.5px}
+.edu-card h3{font-size:19px;margin-top:2px}
+.edu-card .grade{display:inline-block;margin-top:10px;font:600 14px var(--f-body);color:var(--accent-ink);background:var(--accent-soft);border-radius:2px;padding:3px 9px}
+.mods{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.mods td{padding:7px 0;border-top:1px solid var(--line)}
+.mods td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:12px}
+.awards{margin-top:32px}
+.award{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.award .d{font-size:14.5px;color:var(--ink-2);white-space:nowrap}
+
+/* contact */
+.contact{margin-top:clamp(48px,7vw,72px);border-top:3px solid var(--accent);background:var(--sheet);border-radius:var(--r);padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center}
+@media (max-width:820px){.contact{grid-template-columns:minmax(0,1fr)}}
+.contact h2{font-size:clamp(24px,3vw,30px);color:var(--accent)}
+.contact p{color:var(--ink-2);margin:8px 0 0;max-width:52ch}
+.contact .cta{margin-top:0}
+footer{padding-block:24px 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+/* editing */
+.notice{background:var(--accent-soft);border-bottom:1px solid var(--line);font-size:15px}
+.notice .wrap{padding-block:10px}
+body.editing [data-path]{outline:1px dashed color-mix(in srgb,var(--blue) 55%,transparent);outline-offset:2px;border-radius:2px;cursor:text;min-width:2ch;display:inline-block}
+body.editing [data-path]:hover{background:var(--blue-soft)}
+body.editing [data-path]:focus{outline:2px solid var(--blue);background:var(--blue-soft)}
+body.editing [data-path]:empty::before{content:attr(data-ph);color:var(--ink-2);opacity:.7}
+body.editing p[data-path],body.editing div[data-path],body.editing h1[data-path],body.editing h3[data-path]{display:block}
+.ed{display:none}
+body.editing .ed{display:inline-flex}
+body.editing .ed.blk{display:flex}
+body.editing .tb > div{grid-template-columns:minmax(0,1fr)}
+.xbtn{align-items:center;gap:5px;font:500 13px var(--f-body);padding:4px 9px;border-radius:2px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2);cursor:pointer}
+.xbtn:hover{color:var(--ink);border-color:var(--ink-2)}
+.xbtn.del:hover{color:#B3261E;border-color:#B3261E}
+.xbtn.add{border-style:dashed;color:var(--blue);border-color:color-mix(in srgb,var(--blue) 50%,transparent)}
+.edrow{gap:6px;flex-wrap:wrap;align-items:center}
+.edhint{font:400 13px var(--f-body);color:var(--ink-2)}
+.lvl-ed{cursor:pointer;background:none;border:0;padding:4px 0}
+.toolbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom,0px)}
+.toolbar .wrap{display:flex;align-items:center;gap:10px;min-height:60px;flex-wrap:wrap;padding-block:8px}
+.toolbar .msg{font-size:14px;color:var(--ink-2);margin-right:auto;min-width:0}
+.toolbar .msg b{color:var(--ink);font-weight:600}
+body.editing{padding-bottom:90px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:76px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="application/json" id="pf-data">{"example":false,"updated":"2026-10","name":"Hitarth Vaghela","initials":"HV","role":"MEng Aeronautical Engineering · Loughborough University","pitch":"I'm a third-year Aeronautical Engineering student at Loughborough. I got 70.2% in my second year and I'm on track for a First. Most of my coursework has been structural and aerodynamic analysis (FEA in Siemens NX, CFD in SU2, control work in MATLAB and Simulink), but I also enjoy the hands-on side. In first year I looked after manufacturing for our BMFA Payload Challenge team, and we finished 2nd internationally.","status":"Looking for an aerospace placement or internship","email":"hitarthv22@gmail.com","links":[{"label":"LinkedIn","url":"https://www.linkedin.com/in/hitarth-vaghela-/"}],"airfoil":{"naca":"2412","alpha":4},"facts":[{"k":"Degree","v":"MEng (Hons) Aeronautical Engineering"},{"k":"University","v":"Loughborough University"},{"k":"Current year","v":"Year 3 of 4 (2026 – 2027)"},{"k":"Year 2 result","v":"70.2% · First"},{"k":"Year 1 result","v":"65.6% · 2:1"},{"k":"Seeking","v":"Placement or internship in aerospace"},{"k":"Based","v":"Leicester, UK"}],"projects":[{"problem":"The brief sets thrust, fuel burn and turbine entry temperature (TET) limits. We need a cycle that meets all of them and an engine layout that could realistically be built.","approach":"We're iterating bypass ratio, overall pressure ratio and fan pressure ratio in GasTurb until we land on the best cycle within the TET limit. From there we'll work out how many compressor, booster and turbine stages the engine needs and build it as a 3D model.","outcome":"Still in progress. We have two reports to write. The first is a 6-page cycle analysis comparing our engine with the CFM56, IAE V2500, PW1100G-JM and CFM LEAP-1B. The second is a 20-page report explaining our design choices.","metrics":[{"v":"4","u":"","l":"Competitor engines benchmarked"},{"v":"1974–2013","u":"","l":"Engine first runs compared"},{"v":"2","u":"","l":"Reports (6 and 20 pages)"}],"tools":["GasTurb","Cycle analysis","Turbofan design","Competitor benchmarking","Siemens NX","Technical reporting","Teamwork"],"links":[],"img":"","featured":true,"context":"Year 3 Gas Turbine Design 1 coursework · team of 2 · in progress","title":"Turbofan engine cycle optimisation and design","discipline":"Propulsion","date":"2026 – 2027","summary":"My current project, done in a pair. We're using GasTurb to find a turbofan cycle that meets the brief, then working out the engine layout and modelling it in CAD."},{"problem":"We had to choose a material for each wing component and show the structure would survive its design loads before anything was built.","approach":"We narrowed down materials in Granta EduPack, then built the wing in NX as an assembly of separate parts. I ran FEA on the components to check buckling, bending and torsion, and used eigenvalue analysis to find which failure mode would happen first.","outcome":"Our final report got 76%, a First.","metrics":[{"v":"76","u":"%","l":"Report mark (First)"},{"v":"4","u":"","l":"Failure modes analysed"}],"tools":["Granta EduPack","Siemens NX","FEA","Buckling analysis","Materials selection","Technical reporting","Teamwork"],"links":[],"img":"","featured":false,"context":"Year 2 Structural Design Project · team","title":"Wing assembly: materials selection and FEA failure analysis","discipline":"Structures","date":"2025 – 2026","summary":"A group project where we picked materials for a wing in Granta EduPack, modelled every part in Siemens NX and then used FEA to see how each part would fail."},{"problem":"We had to predict lift, drag and pitching moment across a range of Mach numbers and angles, and find the point where shock waves start driving the drag up.","approach":"I ran an angle-of-attack sweep at Mach 0.6 and a Mach sweep from 0.3 to 0.83, letting each case run for 5,000 iterations to converge. Matching my lift to NASA's showed their tunnel data was about 0.75° off, so I corrected for that before comparing CL, CD and Cm. I used Mach contour and Cp plots to find where shocks formed.","outcome":"My lift coefficient came within 0.9% of NASA's. I found the critical Mach number at about 0.72, drag divergence at 0.76, and a best L/D of around 60 at 1.5°. Drag and moment were further off, which I put down to the limits of the RANS turbulence model.","metrics":[{"v":"0.9","u":"%","l":"CL error vs NASA data"},{"v":"60","u":"","l":"Peak L/D at 1.5°"},{"v":"0.76","u":"","l":"Drag divergence Mach"},{"v":"2:1","u":"","l":"Report grade"}],"tools":["SU2 CFD","RANS","CFD validation","MATLAB","Technical reporting"],"links":[],"img":"","featured":false,"context":"Year 2 Compressible Flow coursework","title":"Transonic CFD of a NASA supercritical airfoil","discipline":"Aerodynamics","date":"2025 – 2026","summary":"I used the SU2 solver (RANS) to simulate NASA's Supercritical Airfoil 12, then checked my results against NASA's own wind tunnel data."},{"problem":"","approach":"I drew the root locus by hand (centroid, asymptotes and angles) and checked it against MATLAB's rlocus. A Routh array gave me the stable gain range. I compared step responses for a stable and a marginally stable gain, drew the Bode plot by hand and in MATLAB, and then built the system in Simulink to tune Kp, Ki and Kd.","outcome":"The stable range was 100 \u003c K \u003c 1290. For a damping ratio of 0.17 I calculated 58.2% overshoot, a natural frequency of 7.48 rad/s and a gain of about 740, which MATLAB agreed with to within 1%. With Kp = 600, Ki = 100 and Kd = 200 the response settled within ±1% after 20 seconds.","metrics":[{"v":"100–1290","u":"","l":"Stable gain range"},{"v":"7.48","u":"rad/s","l":"Natural frequency"},{"v":"±1","u":"%","l":"PID steady-state error"},{"v":"2:1","u":"","l":"Report grade"}],"tools":["MATLAB","Simulink","Root locus","Bode analysis","PID control","Routh stability"],"links":[],"img":"","featured":false,"context":"Year 2 Control Engineering coursework","title":"Aircraft control system: root locus, Bode and PID design","discipline":"Flight control","date":"2025 – 2026","summary":"We were given a model of an aircraft's oscillation. I analysed it by hand and in MATLAB, found which gains kept it stable, then tuned a PID controller in Simulink."},{"problem":"It had to be low cost and low weight, and simple enough for first years to put together without problems.","approach":"We went with a NACA 2412 airfoil because it gave a good balance of lift and camber at a chord length we could work with. I modelled each part in Siemens NX and assembled them, leaving enough clearance in the ribs for the spars and glue. We exported every part as a DXF for the laser cutter and added spares so the build team wouldn't run short.","outcome":"Our report covered bending, force against extension, stress and shear, and got 73%, a First.","metrics":[{"v":"73","u":"%","l":"Report mark (First)"},{"v":"2412","u":"","l":"NACA airfoil"}],"tools":["Siemens NX","Design for manufacture","DXF export","Laser cutting","Stress analysis","Technical reporting","Teamwork"],"links":[],"img":"","featured":false,"context":"Year 2 design project · team","title":"Low-cost balsa wing designed for manufacture","discipline":"Aircraft design","date":"2025 – 2026","summary":"We designed a cheap, light balsa wing as a kit of separate parts. First-year students then built it from our laser-cutting files."},{"problem":"","approach":"I used rotational dynamics and the drum's moment of inertia to model the lift as a damped spring-mass system. I then built it in Simulink and plotted position and acceleration against time.","outcome":"The lift travels from 3 m and settles at 13 m after about 8 seconds. In the report I also explained why a real lift behaves differently, since it has motor control, constant-speed travel and a holding brake.","metrics":[{"v":"10","u":"m","l":"Travel to stop"},{"v":"≈8","u":"s","l":"Settling time"},{"v":"2:1","u":"","l":"Report grade"}],"tools":["MATLAB","Simulink","Dynamics modelling"],"links":[],"img":"","featured":false,"context":"Year 2 coursework","title":"Lift drum dynamics: hand calculation vs Simulink","discipline":"Dynamics","date":"2025 – 2026","summary":"A lift is driven by a rotating drum. I worked out by hand where it would stop, then checked my answer with a MATLAB script and a Simulink model."},{"problem":"","approach":"","outcome":"I wrote up how the test results compared with theory in a lab report, which got a 2:1.","metrics":[{"v":"2:1","u":"","l":"Report grade"}],"tools":["Laboratory testing","Stress analysis","Data analysis","Technical reporting"],"links":[],"img":"","featured":false,"context":"Year 2 laboratory","title":"Steel beam failure test","discipline":"Structures","date":"2025 – 2026","summary":"In the lab we loaded a steel beam until it failed. I recorded the data and compared the stress and strain against my hand calculations."},{"title":"BMFA Payload Challenge","discipline":"Aircraft design","context":"Loughborough University team · manufacturing","date":"2024 – 2025","summary":"Our university team designed, built and load-tested a small fixed-wing aircraft for an international payload competition. My job was mostly manufacturing, and I made most of the airframe parts on the laser cutter.","problem":"The aim was to carry as much payload as possible while keeping the airframe light, stiff and quick to build.","approach":"We simulated the loads on scale models first. The airframe was laser-cut balsa, plywood and MDF with carbon fibre reinforcement, held together with epoxy and wood glue. We tested it structurally in the lab before the competition.","outcome":"We came 2nd internationally in the payload challenge, which is judged on how much the aircraft can carry.","metrics":[{"v":"2nd","u":"","l":"International placing"},{"v":"4","u":"","l":"Materials combined"}],"tools":["Laser cutting","Composite layup","Adhesive bonding","Structural load testing","Prototyping","Teamwork"],"links":[],"img":"","featured":true},{"title":"Workshop practicals: machining, sheet metal and riveting","discipline":"Manufacturing","context":"Year 1 university workshop laboratories","date":"2024 – 2025","summary":"Workshop sessions in first year where I used manual and CNC lathes and mills, bent aluminium sheet and riveted it together with a pneumatic rivet gun.","problem":"","approach":"I turned and milled parts on the manual lathes and mills, and on the CNC centre lathe, CNC milling machine and CNC machining centre. I also bent aluminium sheet and riveted it through pre-drilled holes, which is close to how aircraft skins are joined. I used the laser cutters as well.","outcome":"Safety was a big part of these sessions. We had a workshop induction, wore the right PPE, followed the risk assessments and machine procedures, and kept the area tidy.","metrics":[{"v":"6","u":"","l":"Machine types operated"}],"tools":["Manual lathe","Manual milling","CNC machining","Laser cutting","Sheet metal forming","Pneumatic riveting","Risk assessment","PPE"],"links":[],"img":"","featured":true},{"title":"STOL drone: design, build and flight test","discipline":"Aircraft design","context":"Year 1 team project","date":"2024 – 2025","summary":"Our first-year team designed and built a small short take-off and landing (STOL) drone around a motor and LiPo battery we were given, then flew it in the sports hall.","problem":"We needed to get it airborne in as short a distance as possible using the propulsion we'd been given.","approach":"We designed the airframe in CAD, laser-cut the parts from balsa and glued them together using drills, rulers and hand tools. We met regularly as a team to split up the work.","outcome":"It didn't manage sustained flight. The main thing I learned was that a slow aircraft needs a higher aspect ratio wing to make enough lift. I also got much more confident with workshop tools, and I saw how much a team depends on people turning up to meetings and keeping each other updated.","metrics":[],"tools":["CAD","Laser cutting","Adhesive bonding","Hand and power tools","Flight testing","Prototyping","Teamwork"],"links":[],"img":"","featured":false},{"title":"Jet engine performance trade-offs","discipline":"Propulsion","context":"GE Aerospace engineering job simulation (Forage)","date":"2026","summary":"A virtual work experience from GE Aerospace on Forage. I looked at how different energy sources would affect a jet engine's thermal efficiency.","problem":"","approach":"I compared design scenarios to see how compression ratio and bypass ratio change thrust and fuel burn.","outcome":"","metrics":[],"tools":["Thermodynamic analysis","Trade studies"],"links":[],"img":"","featured":false},{"title":"Fleet maintenance and defect investigation","discipline":"Maintenance (MRO)","context":"British Airways engineering job simulation (Forage)","date":"2026","summary":"A virtual work experience from British Airways on Forage. I worked through simulated defects on in-service parts and traced each one back to its root cause.","problem":"","approach":"","outcome":"I also used maintenance data to forecast which parts would be needed and built a maintenance schedule around the fleet's timeline.","metrics":[],"tools":["Root cause analysis","Maintenance planning","Data analysis"],"links":[],"img":"","featured":false},{"title":"2D platformer game","discipline":"Software","context":"Individual · A level Computer Science NEA","date":"2023 – 2024","summary":"My A-level Computer Science project. I wrote a 2D platformer in C# using object-oriented programming, then tested and debugged it until it worked properly.","problem":"","approach":"","outcome":"","metrics":[{"v":"190+","u":"","l":"Lines of C#"}],"tools":["C#","Visual Studio"],"links":[],"img":"","featured":false}],"experience":[],"skills":[{"group":"Design, simulation and analysis","items":[{"n":"Siemens NX","lvl":2},{"n":"FEA","lvl":3},{"n":"SU2 CFD","lvl":3},{"n":"GasTurb","lvl":1},{"n":"Granta EduPack","lvl":3},{"n":"MATLAB","lvl":3},{"n":"Simulink","lvl":3},{"n":"XFLR5","lvl":2},{"n":"CAD","lvl":2}]},{"group":"Engineering methods","items":[{"n":"Buckling analysis","lvl":3},{"n":"Stress analysis","lvl":3},{"n":"Materials selection","lvl":3},{"n":"CFD validation","lvl":2},{"n":"Root locus","lvl":3},{"n":"Bode analysis","lvl":3},{"n":"PID control","lvl":3},{"n":"Dynamics modelling","lvl":2},{"n":"Structural load testing","lvl":2},{"n":"Thermodynamic analysis","lvl":2},{"n":"Cycle analysis","lvl":1},{"n":"Turbofan design","lvl":1}]},{"group":"Manufacturing and workshop","items":[{"n":"Design for manufacture","lvl":2},{"n":"DXF export","lvl":2},{"n":"Laser cutting","lvl":3},{"n":"Manual lathe","lvl":1},{"n":"Manual milling","lvl":1},{"n":"CNC machining","lvl":1},{"n":"Sheet metal forming","lvl":1},{"n":"Pneumatic riveting","lvl":1},{"n":"Composite layup","lvl":2},{"n":"Adhesive bonding","lvl":2},{"n":"Prototyping","lvl":2},{"n":"Hand and power tools","lvl":2}]},{"group":"Laboratory health and safety","items":[{"n":"Workshop safety induction","lvl":2},{"n":"PPE","lvl":2},{"n":"Risk assessment","lvl":2},{"n":"COSHH (epoxy and adhesives)","lvl":1},{"n":"Safe machine operation","lvl":2},{"n":"Laser cutter safety","lvl":2}]},{"group":"Testing, data and reporting","items":[{"n":"Laboratory testing","lvl":2},{"n":"Flight testing","lvl":1},{"n":"Data analysis","lvl":2},{"n":"Technical reporting","lvl":3},{"n":"Root cause analysis","lvl":1},{"n":"Maintenance planning","lvl":1}]},{"group":"Programming and professional","items":[{"n":"Python","lvl":2},{"n":"C#","lvl":2},{"n":"HTML/CSS","lvl":2},{"n":"SQL","lvl":2},{"n":"Teamwork","lvl":3},{"n":"Communication","lvl":2},{"n":"Problem solving","lvl":2}]}],"education":[{"title":"MEng (Hons) Aeronautical Engineering · Year 3","org":"Loughborough University","date":"2026 – 2027","grade":"In progress","modules":[{"n":"Aircraft Design","g":""},{"n":"Aerodynamics","g":""},{"n":"Aircraft Stability and Flight Test","g":""},{"n":"Flight Control Systems","g":""},{"n":"Gas Turbine Design 1","g":""},{"n":"Introduction to Computational Fluid Dynamics","g":""},{"n":"Spacecraft Engineering","g":""},{"n":"Battery Technology","g":""},{"n":"Machine Intelligence","g":""},{"n":"Sensor Fusion for Intelligent Vehicles","g":""},{"n":"Noise Control","g":""}]},{"title":"MEng (Hons) Aeronautical Engineering · Year 2","org":"Loughborough University","date":"2025 – 2026","grade":"70.2% · First","modules":[{"n":"Engineering Mathematics 3","g":"84%"},{"n":"Incompressible Aerodynamics","g":"82%"},{"n":"Electrotechnology","g":"80%"},{"n":"Compressible Flow","g":"79%"},{"n":"Aircraft Structures","g":"77%"},{"n":"Structural Design Project","g":"76%"},{"n":"Fixed and Rotary Wing Aircraft Performance","g":"67%"},{"n":"Control Engineering","g":"64%"}]},{"title":"MEng (Hons) Aeronautical Engineering · Year 1","org":"Loughborough University","date":"2024 – 2025","grade":"65.6% · 2:1","modules":[{"n":"Engineering Mathematics 1","g":"90%"},{"n":"Materials and Structures","g":"79%"},{"n":"Engineering Design and Manufacture","g":"72%"},{"n":"Thermofluids","g":"68%"},{"n":"Engineering Mathematics 2","g":"68%"}]},{"title":"A levels","org":"Wyggeston and Queen Elizabeth I College","date":"2022 – 2024","grade":"AAAB","modules":[{"n":"Mathematics, Further Mathematics, Physics, Computer Science","g":""}]},{"title":"GCSEs","org":"Rushey Mead Academy","date":"2017 – 2022","grade":"11 GCSEs, A* – B","modules":[{"n":"Including Maths, Physics, Chemistry, Biology and Computer Science","g":""}]}],"awards":[{"t":"BMFA Payload Challenge, 2nd place internationally","d":"2025"},{"t":"MathWorks certified: MATLAB and Simulink","d":"2026"},{"t":"Anthropic certification: Claude","d":"2026"},{"t":"Google AI Essentials specialisation (Coursera)","d":""},{"t":"Royal Aeronautical Society (RAeS), Student Affiliate","d":"Since Dec 2024"},{"t":"Institution of Mechanical Engineers (IMechE), Student Affiliate","d":"Since Sep 2026"}]}</script>
+<script id="pf-app">
+(function(){
+"use strict";
+var FONT_LINK='<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap">';
+var ORIGINAL=document.getElementById("pf-data").textContent;
+var S=JSON.parse(ORIGINAL);
+var editing=false, dirty=false, canWrite=false, art=null;
+var filter=null; /* {type:'disc'|'tool', v} */
+var app=document.getElementById("app");
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function get(p){return p.split(".").reduce(function(o,k){return o==null?o:o[k]},S)}
+function set(p,v){var ks=p.split("."),o=S;for(var i=0;i<ks.length-1;i++)o=o[ks[i]];o[ks[ks.length-1]]=v}
+function safeUrl(u){u=String(u||"").trim();return /^https?:\/\//i.test(u)?u:(u?"https://"+u:"#")}
+
+/* editable text */
+function E(path,tag,cls,ph,opt){
+  tag=tag||"span";var v=get(path);
+  if(!editing&&opt&&!String(v||"").trim())return "";
+  var a=editing?' contenteditable="true" spellcheck="true"':"";
+  var multi=(tag==="p"||tag==="div")?' data-multi="1"':"";
+  return "<"+tag+(cls?' class="'+cls+'"':"")+' data-path="'+path+'" data-ph="'+esc(ph||"Type here")+'"'+multi+a+">"+esc(v)+"</"+tag+">";
+}
+function btn(act,path,text,cls,extra){return '<button type="button" class="ed xbtn '+(cls||"")+'" data-act="'+act+'" data-path="'+path+'"'+(extra||"")+">"+text+"</button>"}
+function del(path,what){return btn("del",path,"Remove"+(what?" "+what:""),"del")}
+function add(path,tpl,text){return btn("add",path,"+ "+text,"add",' data-tpl="'+tpl+'"')}
+function up(path,i){return i>0?btn("up",path+"."+i,"Move up",""):""}
+
+var ICON={
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  ext:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+  pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4"/></svg>'
+};
+
+/* ---------- NACA 4-digit airfoil ---------- */
+function foilSVG(){
+  var code=String((S.airfoil&&S.airfoil.naca)||"2412").replace(/\D/g,"").padStart(4,"0").slice(0,4);
+  var alpha=Math.max(-10,Math.min(15,parseFloat(S.airfoil&&S.airfoil.alpha)||0));
+  var m=+code[0]/100,p=+code[1]/10,t=+code.slice(2)/100;if(t<=0)t=.12;
+  var W=560,H=240,c=400,x0=90,y0=128,N=70,up=[],lo=[],cam=[];
+  var a=-alpha*Math.PI/180,qc=0.25;
+  function rot(x,y){var dx=x-qc,dy=y;return[x0+c*(qc+dx*Math.cos(a)-dy*Math.sin(a)),y0-c*(dx*Math.sin(a)+dy*Math.cos(a))]}
+  for(var i=0;i<=N;i++){
+    var b=Math.PI*i/N,x=(1-Math.cos(b))/2;
+    var yt=5*t*(0.2969*Math.sqrt(x)-0.1260*x-0.3516*x*x+0.2843*x*x*x-0.1036*x*x*x*x);
+    var yc=0,dyc=0;
+    if(m>0&&p>0){if(x<p){yc=m/(p*p)*(2*p*x-x*x);dyc=2*m/(p*p)*(p-x)}else{yc=m/((1-p)*(1-p))*((1-2*p)+2*p*x-x*x);dyc=2*m/((1-p)*(1-p))*(p-x)}}
+    var th=Math.atan(dyc);
+    up.push(rot(x-yt*Math.sin(th),yc+yt*Math.cos(th)));
+    lo.push(rot(x+yt*Math.sin(th),yc-yt*Math.cos(th)));
+    cam.push(rot(x,yc));
+  }
+  function pts(arr){return arr.map(function(q){return q[0].toFixed(1)+","+q[1].toFixed(1)}).join(" ")}
+  var prof="M"+pts(up)+" L"+pts(lo.slice().reverse())+"Z";
+  var le=rot(0,0),te=rot(1,0),q=rot(qc,0);
+  var flow="";
+  [44,72,184,212].forEach(function(y){flow+='<path class="flow" d="M14 '+y+' L70 '+y+'"/><path class="ahg" d="M70 '+(y-3.5)+' L78 '+y+' L70 '+(y+3.5)+'z"/>'});
+  var ar=36,arc="M"+(q[0]+ar)+" "+q[1]+" A"+ar+" "+ar+" 0 0 0 "+(q[0]+ar*Math.cos(a)).toFixed(1)+" "+(q[1]+ar*Math.sin(a)).toFixed(1);
+  var lx=q[0],ly=q[1]-14;
+  return '<svg class="foil" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="NACA '+code+' airfoil section at '+alpha+' degrees angle of attack">'+
+    flow+'<text x="14" y="122">V∞</text>'+
+    '<line class="chord" x1="'+(x0-14)+'" y1="'+y0+'" x2="'+(x0+c+30)+'" y2="'+y0+'"/>'+
+    '<line class="chord" x1="'+le[0].toFixed(1)+'" y1="'+le[1].toFixed(1)+'" x2="'+te[0].toFixed(1)+'" y2="'+te[1].toFixed(1)+'" style="stroke-dasharray:1 3"/>'+
+    '<path class="profile" d="'+prof+'"/>'+
+    '<polyline class="camber" points="'+pts(cam)+'"/>'+
+    (alpha?'<path d="'+arc+'" fill="none" stroke="var(--ink-2)" stroke-width="1"/>':'')+
+    '<line class="lift" x1="'+lx.toFixed(1)+'" y1="'+(ly).toFixed(1)+'" x2="'+lx.toFixed(1)+'" y2="'+(ly-62).toFixed(1)+'"/>'+
+    '<path class="ah" d="M'+(lx-5).toFixed(1)+' '+(ly-58).toFixed(1)+' L'+lx.toFixed(1)+' '+(ly-70).toFixed(1)+' L'+(lx+5).toFixed(1)+' '+(ly-58).toFixed(1)+'z"/>'+
+    '<text class="hl" x="'+(lx+9).toFixed(1)+'" y="'+(ly-56).toFixed(1)+'">L</text>'+
+    '<circle cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="3" fill="var(--accent)"/>'+
+    '<text x="'+(q[0]+ar+6).toFixed(1)+'" y="'+(q[1]+16).toFixed(1)+'">α = '+alpha.toFixed(1)+'°</text>'+
+    '<text x="'+(x0+c-40)+'" y="'+(H-14)+'" text-anchor="end">NACA '+code+'  ·  t/c '+Math.round(t*100)+'%'+(m?'  ·  camber '+Math.round(m*100)+'% at '+(p*10)+'0%c':'  ·  symmetric')+'</text>'+
+    '<text x="'+(x0+c+30)+'" y="'+(y0-6)+'" text-anchor="end">chord</text>'+
+  '</svg>';
+}
+
+/* ---------- sections ---------- */
+function linksHTML(base,list,cls){
+  return list.map(function(l,i){
+    var p=base+"."+i;
+    if(editing)return '<span class="edrow ed blk" style="gap:6px;align-items:center">'+E(p+".label","span","","Label")+' <span class="mono muted" style="font-size:12px">→</span> '+E(p+".url","span","mono","https://…")+del(p)+"</span>";
+    return '<a class="'+(cls||"")+'" href="'+esc(safeUrl(l.url))+'" target="_blank" rel="noopener">'+esc(l.label)+" "+ICON.ext+"</a>";
+  }).join("");
+}
+
+function hero(){
+  var facts=S.facts.map(function(f,i){
+    return '<div><div class="label">'+E("facts."+i+".k","span","","Label")+'</div><div class="v">'+E("facts."+i+".v","span","","Value")+'</div>'+
+      (editing?'<div class="ed edrow" style="margin-top:6px">'+del("facts."+i)+"</div>":"")+"</div>";
+  }).join("");
+  
+  var foilEd=editing?'<div class="foil-ed">Your signature airfoil: NACA <input id="ed-naca" inputmode="numeric" maxlength="4" value="'+esc(S.airfoil.naca)+'"> α° <input id="ed-alpha" type="number" min="-10" max="15" step="0.5" value="'+esc(S.airfoil.alpha)+'"></div>':"";
+  return '<header class="hero"><div class="wrap hero-grid">'+
+    '<div style="min-width:0">'+
+      '<span class="status"><i></i>'+E("status","span","","Availability, e.g. Seeking a summer 2027 internship")+'</span>'+
+      E("name","h1","","Your name")+
+      E("role","p","role","Headline: discipline and focus")+
+      E("pitch","p","pitch","Two sentences on what you do and how you work")+
+      '<div class="cta">'+
+        '<button type="button" class="btn primary" data-act="copy">'+ICON.mail+'<span>Copy email</span></button>'+
+        (editing?"":linksHTML("links",S.links,"btn"))+
+      '</div>'+
+      (editing?'<div class="ed blk" style="flex-direction:column;gap:8px;margin-top:14px"><span class="edhint">Email</span>'+E("email","span","mono","you@example.com")+'<span class="edhint">Links (LinkedIn, GitHub, CV link)</span>'+linksHTML("links",S.links)+add("links","link","Add link")+"</div>"
+        :'<div class="email-line">'+esc(S.email)+"</div>")+
+    '</div>'+
+    '<aside class="sheet" aria-label="Key facts">'+
+      '<div class="label" style="padding:14px 20px 4px;color:var(--accent)">At a glance</div>'+
+      '<div class="tb">'+facts+'</div>'+
+      (editing?'<div class="ed blk" style="padding:10px 14px;border-bottom:1px solid var(--line)">'+add("facts","fact","Add fact")+"</div>":"")+
+    '</aside>'+
+  '</div></header>';
+}
+
+function projectHTML(p,i){
+  var b="projects."+i;
+  var metrics=p.metrics.map(function(m,j){
+    var mp=b+".metrics."+j;
+    return '<div class="metric"><div class="num">'+E(mp+".v","span","","0.0")+(editing||m.u?"<small>"+E(mp+".u","span","","unit")+"</small>":"")+'</div><div class="label">'+E(mp+".l","span","","What it measures")+'</div>'+(editing?'<div class="ed" style="margin-top:6px">'+del(mp)+"</div>":"")+"</div>";
+  }).join("");
+  var tools=editing?'<div class="ed blk" style="flex-direction:column;gap:4px"><span class="edhint">Tools (comma separated)</span><span data-path="'+b+'.tools" data-csv="1" data-ph="Python, ANSYS, …" contenteditable="true" class="mono" style="font-size:13px">'+esc(p.tools.join(", "))+"</span></div>"
+    :(p.tools.length?'<div class="tools">'+p.tools.map(function(t){return '<span class="tool">'+esc(t)+"</span>"}).join("")+"</div>":"");
+  var hasDetail=p.problem||p.approach||p.outcome;
+  var pab=function(k,lbl){return (editing||String(p[k]||"").trim())?'<div><div class="label">'+lbl+"</div>"+E(b+"."+k,"p","","Optional")+"</div>":""};
+  var detail=(editing||hasDetail)?'<details'+(editing?" open":"")+'><summary>Problem, approach and outcome</summary><div class="pab">'+pab("problem","Problem")+pab("approach","Approach")+pab("outcome","Outcome")+"</div></details>":"";
+  var cover=p.img?'<div class="cover"><img src="'+p.img+'" alt="'+esc(p.title)+'"></div>':"";
+  return '<article class="proj'+(p.featured?" featured":"")+'">'+cover+
+    '<div class="body">'+
+      (editing?'<div class="ed edrow">'+btn("img",b,p.img?"Replace image":"+ Add image","add")+(p.img?btn("noimg",b,"Remove image","del"):"")+btn("feat",b,p.featured?"Unfeature":"Feature (full width)","")+up("projects",i)+del(b,"project")+"</div>":"")+
+      '<div class="meta"><span class="disc">'+E(b+".discipline","span","","Discipline")+'</span><span class="label">'+E(b+".date","span","","Dates")+'</span></div>'+
+      E(b+".title","h3","","Project title")+
+      E(b+".context","div","label","Team or individual · your role",true)+
+      E(b+".summary","p","sum","One or two sentences: what you built and why")+
+      ((metrics||editing)?'<div><div class="label" style="margin-bottom:6px">Results</div><div class="metrics">'+metrics+"</div>"+(editing?'<div class="ed" style="margin-top:8px">'+add(b+".metrics","metric","Add result")+"</div>":"")+"</div>":"")+
+      tools+detail+
+      '<div class="links">'+linksHTML(b+".links",p.links)+(editing?add(b+".links","link","Add link"):"")+"</div>"+
+    "</div></article>";
+}
+
+function projects(){
+  var discs=[];S.projects.forEach(function(p){var d=String(p.discipline||"").trim();if(d&&discs.indexOf(d)<0)discs.push(d)});
+  var list=S.projects.map(function(p,i){return{p:p,i:i}});
+  if(!editing&&filter){
+    list=list.filter(function(o){return filter.type==="disc"?o.p.discipline===filter.v:o.p.tools.some(function(t){return t.toLowerCase()===filter.v.toLowerCase()})});
+  }
+  var chips=(!editing&&discs.length>1)?'<div class="filters" role="group" aria-label="Filter projects by discipline"><button type="button" class="chip" data-act="filter" data-v="" aria-pressed="'+(!filter)+'">All · '+S.projects.length+'</button>'+
+    discs.map(function(d){var n=S.projects.filter(function(p){return p.discipline===d}).length;return '<button type="button" class="chip" data-act="filter" data-v="'+esc(d)+'" aria-pressed="'+(!!filter&&filter.type==="disc"&&filter.v===d)+'">'+esc(d)+" · "+n+"</button>"}).join("")+"</div>":"";
+  var note=(!editing&&filter&&filter.type==="tool")?'<p class="filter-note">Projects using '+esc(filter.v)+' · <button type="button" data-act="filter" data-v="">Show all</button></p>':"";
+  return '<section class="block" id="projects"><div class="wrap">'+
+    '<div class="sec-head"><h2>Projects</h2><span class="label">University, team and personal projects</span></div>'+
+    chips+note+
+    '<div class="projects">'+(list.length?list.map(function(o){return projectHTML(o.p,o.i)}).join(""):'<div class="empty">No projects yet.</div>')+"</div>"+
+    (editing?'<div class="ed blk" style="margin-top:16px">'+add("projects","project","Add project")+"</div>":"")+
+  "</div></section>";
+}
+
+function experience(){
+  if(!editing&&!S.experience.length)return "";
+  var items=S.experience.map(function(x,i){
+    var b="experience."+i;
+    return '<div class="xp-item"><div><div class="label">'+E(b+".date","span","","Dates")+'</div>'+(editing?'<div class="ed edrow" style="margin-top:8px">'+up("experience",i)+del(b)+"</div>":"")+'</div>'+
+      '<div style="min-width:0">'+E(b+".role","h3","","Role")+E(b+".org","div","org","Organisation")+
+      "<ul>"+x.points.map(function(pt,j){return "<li>"+E(b+".points."+j,"span","","Achievement with a number in it")+(editing?" "+del(b+".points."+j):"")+"</li>"}).join("")+"</ul>"+
+      (editing?'<div class="ed" style="margin-top:6px">'+add(b+".points","point","Add bullet")+"</div>":"")+
+      "</div></div>";
+  }).join("");
+  return '<section class="block" id="experience"><div class="wrap"><div class="sec-head"><h2>Experience</h2><span class="label">Industry, teams and leadership</span></div>'+
+    '<div class="xp">'+items+"</div>"+(editing?'<div class="ed blk" style="margin-top:16px">'+add("experience","xp","Add role")+"</div>":"")+"</div></section>";
+}
+
+function toolCount(n){n=n.toLowerCase();return S.projects.filter(function(p){return p.tools.some(function(t){return t.toLowerCase()===n})}).length}
+function lvlBar(l,path){
+  var h='<span class="lvl" aria-label="Level '+l+' of 3">';for(var k=1;k<=3;k++)h+='<i class="'+(k<=l?"on":"")+'"></i>';h+="</span>";
+  return editing?'<button type="button" class="lvl-ed" data-act="lvl" data-path="'+path+'" title="Click to change level">'+h+"</button>":h;
+}
+function skills(){
+  var g=S.skills.map(function(gr,i){
+    var b="skills."+i;
+    return '<div class="sk-group">'+E(b+".group","h3","","Group name")+
+      gr.items.map(function(s,j){
+        var p=b+".items."+j,n=toolCount(s.n);
+        var name=editing?E(p+".n","span","n","Skill"):(n?'<span class="n"><button type="button" class="n" data-act="tool" data-v="'+esc(s.n)+'">'+esc(s.n)+'</button><span class="used">'+n+" project"+(n>1?"s":"")+"</span></span>":'<span class="n">'+esc(s.n)+"</span>");
+        return '<div class="sk-row">'+name+'<span style="display:flex;gap:8px;align-items:center">'+lvlBar(s.lvl,p)+(editing?del(p):"")+"</span></div>";
+      }).join("")+
+      (editing?'<div class="ed edrow" style="padding:10px 0">'+add(b+".items","skill","Add skill")+del(b,"group")+"</div>":"")+
+    "</div>";
+  }).join("");
+  return '<section class="block" id="skills"><div class="wrap"><div class="sec-head"><h2>Skills</h2><div class="lvl-key"><span>'+lvlBar(1).replace(/<button[^>]*>|<\/button>/g,"")+' Working</span><span>'+lvlBar(2).replace(/<button[^>]*>|<\/button>/g,"")+' Proficient</span><span>'+lvlBar(3).replace(/<button[^>]*>|<\/button>/g,"")+' Advanced</span></div></div>'+
+    '<div class="skills">'+g+"</div>"+(editing?'<div class="ed blk" style="margin-top:16px">'+add("skills","group","Add skill group")+'</div><p class="ed blk edhint" style="margin-top:8px">Skills that match a project tool get a link that filters the projects.</p>':"")+"</div></section>";
+}
+
+function education(){
+  var e=S.education.map(function(ed,i){
+    var b="education."+i;
+    return '<div class="edu-card"><div class="label">'+E(b+".date","span","","Dates")+"</div>"+E(b+".title","h3","","Qualification")+E(b+".org","div","muted","Institution")+
+      ((editing||ed.grade)?'<span class="grade">'+E(b+".grade","span","","Grade")+"</span>":"")+
+      '<table class="mods"><tbody>'+ed.modules.map(function(m,j){var p=b+".modules."+j;return "<tr><td>"+E(p+".n","span","","Module")+(editing?" "+del(p):"")+"</td><td>"+E(p+".g","span","","Mark")+"</td></tr>"}).join("")+"</tbody></table>"+
+      (editing?'<div class="ed edrow" style="margin-top:10px">'+add(b+".modules","module","Add module")+up("education",i)+del(b)+"</div>":"")+"</div>";
+  }).join("");
+  var aw=S.awards.map(function(a,i){var b="awards."+i;return '<div class="award"><span>'+E(b+".t","span","","Award, membership or certificate")+(editing?" "+del(b):"")+'</span><span class="d">'+E(b+".d","span","","Year")+"</span></div>"}).join("");
+  return '<section class="block" id="education"><div class="wrap"><div class="sec-head"><h2>Education</h2><span class="label">Results by year</span></div>'+
+    '<div class="edu">'+e+"</div>"+(editing?'<div class="ed blk" style="margin-top:16px">'+add("education","edu","Add qualification")+"</div>":"")+
+    ((aw||editing)?'<div class="awards"><div class="label" style="margin-bottom:6px">Awards, memberships and certificates</div>'+aw+(editing?'<div class="ed" style="padding-top:10px">'+add("awards","award","Add item")+"</div>":"")+"</div>":"")+
+  "</div></section>";
+}
+
+function contact(){
+  var first=String(S.name||"").split(" ")[0]||"me";
+  return '<div class="wrap"><section class="contact" id="contact"><div><h2>Contact</h2><p>'+esc(S.status)+". The best way to get hold of me is by email.</p></div>"+
+    '<div><div class="cta"><button type="button" class="btn accent" data-act="copy">'+ICON.mail+"<span>Copy email</span></button>"+linksHTML("links",S.links.filter(function(){return !editing}),"btn")+'</div><div class="email-line">'+esc(S.email)+"</div></div></section>"+
+    '<footer><span>© '+esc(S.name)+'</span><span>Last revised '+esc(S.updated||"")+"</span></footer></div>";
+}
+
+function nav(){
+  return '<div class="nav"><div class="wrap"><a class="mark" href="#top"><b>'+esc(S.initials||"")+"</b><span>"+esc(S.name)+'</span></a><nav aria-label="Sections"><a href="#projects">Projects</a>'+(editing||S.experience.length?'<a href="#experience">Experience</a>':"")+'<a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>'+
+    (canWrite&&!editing?'<button type="button" class="btn sm" data-act="edit" style="margin-left:6px">'+ICON.pen+"Edit page</button>":"")+"</nav></div></div>"+
+    (canWrite&&S.example&&!editing?'<div class="notice"><div class="wrap"><span>This page is filled with example content. Select <b>Edit page</b> to replace it with your own projects and results. Only you see this note.</span></div></div>':"");
+}
+
+function toolbar(){
+  if(!editing)return "";
+  return '<div class="toolbar" role="region" aria-label="Editing controls"><div class="wrap"><span class="msg" id="tb-msg">'+(dirty?"<b>Unsaved changes.</b> Click any outlined text to edit it.":"Editing. Click any outlined text to change it.")+'</span>'+
+    '<button type="button" class="btn sm" data-act="discard">Discard changes</button><button type="button" class="btn sm primary" data-act="save">Save and publish</button></div></div>';
+}
+
+function render(){
+  var y=window.scrollY;
+  document.body.classList.toggle("editing",editing);
+  app.innerHTML='<div id="top"></div>'+nav()+hero()+projects()+experience()+skills()+education()+contact()+toolbar();
+  window.scrollTo(0,y);
+}
+
+/* ---------- templates ---------- */
+var TPL={
+  project:function(){return{title:"",discipline:"",context:"",date:"",summary:"",problem:"",approach:"",outcome:"",metrics:[{v:"",u:"",l:""}],tools:[],links:[],img:"",featured:false}},
+  metric:function(){return{v:"",u:"",l:""}},link:function(){return{label:"",url:""}},fact:function(){return{k:"",v:""}},
+  xp:function(){return{role:"",org:"",date:"",points:[""]}},point:function(){return""},
+  skill:function(){return{n:"",lvl:2}},group:function(){return{group:"",items:[{n:"",lvl:2}]}},
+  edu:function(){return{title:"",org:"",date:"",grade:"",modules:[]}},module:function(){return{n:"",g:""}},award:function(){return{t:"",d:""}}
+};
+function markDirty(){dirty=true;var m=document.getElementById("tb-msg");if(m)m.innerHTML="<b>Unsaved changes.</b> Click any outlined text to edit it."}
+function parentAndIndex(path){var ks=path.split(".");var i=+ks.pop();return{arr:get(ks.join(".")),i:i}}
+
+/* ---------- image upload ---------- */
+var fileInput=document.createElement("input");fileInput.type="file";fileInput.accept="image/*";fileInput.hidden=true;document.body.appendChild(fileInput);
+var imgTarget=null;
+fileInput.addEventListener("change",function(){
+  var f=fileInput.files&&fileInput.files[0];if(!f||!imgTarget)return;
+  var rd=new FileReader();rd.onload=function(){
+    var im=new Image();im.onload=function(){
+      var w=Math.min(1400,im.width),h=Math.round(im.height*w/im.width);
+      var cv=document.createElement("canvas");cv.width=w;cv.height=h;cv.getContext("2d").drawImage(im,0,0,w,h);
+      set(imgTarget+".img",cv.toDataURL("image/jpeg",.8));fileInput.value="";markDirty();render();
+    };im.src=rd.result;
+  };rd.readAsDataURL(f);
+});
+
+/* ---------- events ---------- */
+app.addEventListener("click",function(e){
+  var t=e.target.closest("[data-act]");if(!t)return;
+  var act=t.dataset.act,p=t.dataset.path;
+  if(act==="copy"){
+    var em=S.email,done=function(){var s=t.querySelector("span");if(s){var o=s.textContent;s.textContent="Copied";setTimeout(function(){s.textContent=o},1600)}};
+    var fallback=function(){var el=document.querySelector(".email-line");if(el){var r=document.createRange();r.selectNodeContents(el);var sel=getSelection();sel.removeAllRanges();sel.addRange(r)}var s=t.querySelector("span");if(s)s.textContent="Selected below"};
+    try{navigator.clipboard.writeText(em).then(done,fallback)}catch(_){fallback()}
+    return;
+  }
+  if(act==="filter"){filter=t.dataset.v?{type:"disc",v:t.dataset.v}:null;render();return}
+  if(act==="tool"){filter={type:"tool",v:t.dataset.v};render();var pr=document.getElementById("projects");if(pr)pr.scrollIntoView();return}
+  if(act==="edit"){editing=true;filter=null;render();return}
+  if(act==="discard"){S=JSON.parse(ORIGINAL);editing=false;dirty=false;render();return}
+  if(act==="save"){save(t);return}
+  if(act==="add"){get(p).push(TPL[t.dataset.tpl]());markDirty();render();return}
+  if(act==="del"){var o=parentAndIndex(p);o.arr.splice(o.i,1);markDirty();render();return}
+  if(act==="up"){var u=parentAndIndex(p);if(u.i>0){var it=u.arr.splice(u.i,1)[0];u.arr.splice(u.i-1,0,it)}markDirty();render();return}
+  if(act==="lvl"){var cur=get(p+".lvl")||1;set(p+".lvl",cur%3+1);markDirty();render();return}
+  if(act==="feat"){set(p+".featured",!get(p+".featured"));markDirty();render();return}
+  if(act==="img"){imgTarget=p;fileInput.click();return}
+  if(act==="noimg"){set(p+".img","");markDirty();render();return}
+});
+app.addEventListener("input",function(e){
+  var el=e.target;
+  if(el.id==="ed-naca"){S.airfoil.naca=el.value.replace(/\D/g,"").slice(0,4);redrawFoil();markDirty();return}
+  if(el.id==="ed-alpha"){S.airfoil.alpha=parseFloat(el.value)||0;redrawFoil();markDirty();return}
+  var p=el.dataset&&el.dataset.path;if(!p||!editing)return;
+  var v=el.innerText.replace(/ /g," ");
+  if(!el.dataset.multi)v=v.replace(/\n/g," ");
+  if(el.dataset.csv)set(p,v.split(",").map(function(s){return s.trim()}).filter(Boolean));else set(p,v);
+  if(p==="name"){S.initials=String(v).trim().split(/\s+/).map(function(w){return w[0]||""}).join("").slice(0,3).toUpperCase()}
+  markDirty();
+});
+app.addEventListener("focusout",function(e){var el=e.target;if(el.dataset&&el.dataset.path&&editing){var v=get(el.dataset.path);if(typeof v==="string"&&v!==v.trim())set(el.dataset.path,v.trim())}});
+app.addEventListener("keydown",function(e){var el=e.target;if(e.key==="Enter"&&el.dataset&&el.dataset.path&&!el.dataset.multi){e.preventDefault();el.blur()}});
+app.addEventListener("paste",function(e){var el=e.target.closest&&e.target.closest("[data-path]");if(!el||!editing)return;e.preventDefault();var txt=(e.clipboardData||window.clipboardData).getData("text/plain");document.execCommand("insertText",false,txt)});
+function redrawFoil(){}
+window.addEventListener("beforeunload",function(e){if(editing&&dirty){e.preventDefault();e.returnValue=""}});
+
+/* ---------- save: regenerate the whole page from state ---------- */
+function buildDoc(){
+  var hs=document.head&&document.head.querySelector("style");
+  var reset=hs?hs.textContent:":root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif;background:#fafafa}img{max-width:100%}[hidden]{display:none!important}";
+  var css=document.getElementById("st").textContent;
+  var code=document.getElementById("pf-app").textContent;
+  var json=JSON.stringify(S).replace(/</g,"\\u003c");
+  var title=(String(S.name||"").trim()||"My")+" Portfolio";
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+reset+"</style></head><body>"+
+    "<title>"+esc(title)+"</title>\n"+FONT_LINK+'\n<style id="st">'+css+'</style>\n<div id="app"></div>\n<script type="application/json" id="pf-data">'+json+'<\/script>\n<script id="pf-app">'+code+"<\/script></body></html>";
+}
+async function save(b){
+  var msg=document.getElementById("tb-msg");
+  if(!art){msg.textContent="Saving isn’t available in this view. Open the page from your Claude account to save.";return}
+  S.example=false;
+  var d=new Date();S.updated=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");
+  var html=buildDoc();
+  if(html.length>15.5e6){msg.innerHTML="<b>Too large to save.</b> Remove an image or two and try again.";return}
+  b.disabled=true;msg.textContent="Publishing…";
+  try{await art.publish(html);dirty=false;msg.textContent="Published. Reloading the new version…"}
+  catch(err){
+    b.disabled=false;var c=err&&err.code;
+    if(c==="conflict")msg.textContent="A newer version was published elsewhere. The page is reloading to it.";
+    else if(c==="not_writer"||c==="not_granted"||c==="consent_required"||c==="capability_disabled"){msg.textContent="This view is read-only, so changes can’t be saved here.";}
+    else if(c==="too_large")msg.innerHTML="<b>Too large to save.</b> Remove an image or two and try again.";
+    else if(c==="rate_limited")msg.textContent="Saving too often. Wait a minute, then save again.";
+    else msg.textContent="Couldn’t publish just now. Your edits are still here; try Save again.";
+  }
+}
+
+render();
+
+/* light up editing for people who can write this page */
+(async function(){
+  try{
+    if(!window.claude||!window.claude.use)return;
+    art=await window.claude.use("artifact");if(!art)return;
+    var user=await window.claude.use("user");
+    canWrite=user?await user.canEdit():true;
+    if(canWrite)render();
+  }catch(_){}
+})();
+})();
+</script>
+</body>
+</html>
